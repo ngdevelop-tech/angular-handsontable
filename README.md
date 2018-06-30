@@ -12,3 +12,6 @@ This is Handsontable demo application for Angular 2+ with an user defined custom
     - Enable Disable Headers
     - Column / Row Freezing
     - Context Menu
+
+# Others
+For more Angular articles and tutorial refer [**NgDevelop**](https://www.ngdevelop.tech)

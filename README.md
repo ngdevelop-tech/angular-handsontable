@@ -1,27 +1,14 @@
-# HandsontableDemo
+# Full feature Handsontable example in Angular 6.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
+We are using Handsontable Community Edition for a demo.
 
-## Development server
+Handsontable Community Edition (CE) is an open source JavaScript/HTML5 UI Spreadsheet component for web apps. It easily integrates with any data source and comes with a variety of useful features like data binding, validation, sorting or powerful context menu. It is available for Vue, React, Angular and Polymer.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Handsontable in Angular 2+
+This is Handsontable demo application for Angular 2+ with an user defined customization example.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    - Sorting
+    - Searching
+    - Enable Disable Headers
+    - Column / Row Freezing
+    - Context Menu

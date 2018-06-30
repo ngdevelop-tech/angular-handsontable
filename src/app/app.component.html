@@ -1,20 +1,88 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<nav class="navbar navbar-expand-md navbar-light bg-primary">
+  <a class="navbar-brand">Handsontable Demo</a>
+</nav>
 
+<div class="container-fluid">
+
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card border-dark">
+        <div class="card-body">
+          <h4 class="card-title">Headers</h4>
+          <button type="button" class="btn btn-info" (click)="options.columnHeaders = !options.columnHeaders">Enable / Disable Column Headers</button>
+          <button type="button" class="btn btn-info" (click)="options.rowHeaders = !options.rowHeaders">Enable / Disable Row Headers</button>
+        </div>
+      </div>
+      <div class="card border-dark">
+        <div class="card-body">
+          <h4 class="card-title">Fixing</h4>
+          <form class=" form-inline">
+            <div class="form-group">
+              <label for="">Row </label>
+              <input class="form-control" name="fixedRows" [(ngModel)]="options.fixedRowsTop" type="number">
+            </div>
+            <div class="form-group">
+              <label for="">Column Fixing</label>
+              <input type="number" class="form-control" name="fixedColumns" [(ngModel)]="options.fixedColumnsLeft">
+            </div>
+          </form>
+          
+        </div>
+      </div>
+      <div class="card border-dark">
+        <div class="card-body">
+          <h4 class="card-title">Context Menu is  <span *ngIf="!options.contextMenu">Disabled</span> <span *ngIf="options.contextMenu">Enabled</span>  </h4>
+          <button type="button" class="btn btn-info" (click)="options.contextMenu = !options.contextMenu">Enable / Disable Context Menu</button>
+          
+          <div *ngIf="options.contextMenu">
+              <hr>
+          Manual Freezing is  <span *ngIf="!options.manualColumnFreeze">Disabled</span> <span *ngIf="options.manualColumnFreeze">Enabled</span>  
+          <br>
+          <button type="button" class="btn btn-info" (click)="options.manualColumnFreeze = !options.manualColumnFreeze">Enable / Disable </button>
+          </div>
+        </div>
+      </div>
+      <div class="card border-dark">
+        <div class="card-body">
+          <h4 class="card-title">Column Sorting is <span *ngIf="!options.columnSorting">Disabled</span> <span *ngIf="options.columnSorting">Enabled</span>  </h4>
+          <button type="button" class="btn btn-info" (click)="options.columnSorting = !options.columnSorting">Enable / Disable</button>
+        </div>
+      </div>
+      <div class="card border-dark">
+          <div class="card-body">
+            <h4 class="card-title">Searching</h4>
+            <form class=" form-inline">
+              <div class="form-group">
+                <label for="">Enter Search String </label>
+                <input class="form-control" name="searchString" (input)="searchValue($event)" >
+              </div>
+            </form>
+            
+          </div>
+        </div>
+  
+
+    </div>
+
+
+
+    <div class="col-md-6">
+      <hot-table hotId="car_table" [colHeaders]="options.columnHeaders" 
+                  [fixedRowsTop]="options.fixedRowsTop"
+                  [fixedColumnsLeft]="options.fixedColumnsLeft"
+                  [rowHeaders]="options.rowHeaders"
+                  [data]="dataset" 
+                  [height]="700" [width]="650"
+                  [contextMenu]="options.contextMenu"
+                  [manualColumnFreeze]="options.manualColumnFreeze" 
+                  [columnSorting]="options.columnSorting"
+                  [sortIndicator]="true"
+                  [search]="true"> </hot-table>
+      
+
+    </div>
+
+  </div>
+
+</div>
